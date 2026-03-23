@@ -276,6 +276,68 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ============================================
+   Eyes Tracking (Hero)
+   ============================================ */
+const initEyes = () => {
+    const svg = document.getElementById('eyesSvg');
+    const leftPupil = document.getElementById('leftPupilGroup');
+    const rightPupil = document.getElementById('rightPupilGroup');
+
+    if (!svg || !leftPupil || !rightPupil) return;
+
+    const leftCenter = { x: 230, y: 150 };
+    const rightCenter = { x: 450, y: 150 };
+    const maxDist = 12;
+
+    let targetLX = leftCenter.x, targetLY = leftCenter.y;
+    let targetRX = rightCenter.x, targetRY = rightCenter.y;
+    let currentLX = leftCenter.x, currentLY = leftCenter.y;
+    let currentRX = rightCenter.x, currentRY = rightCenter.y;
+
+    function getEyeOffset(mouseX, mouseY, center) {
+        const dx = mouseX - center.x;
+        const dy = mouseY - center.y;
+        const angle = Math.atan2(dy, dx);
+        const dist = Math.min(Math.sqrt(dx * dx + dy * dy) * 0.04, maxDist);
+        return {
+            x: center.x + Math.cos(angle) * dist,
+            y: center.y + Math.sin(angle) * dist
+        };
+    }
+
+    document.addEventListener('mousemove', (e) => {
+        const rect = svg.getBoundingClientRect();
+        const scaleX = 680 / rect.width;
+        const scaleY = 300 / rect.height;
+        const mouseX = (e.clientX - rect.left) * scaleX;
+        const mouseY = (e.clientY - rect.top) * scaleY;
+
+        const left = getEyeOffset(mouseX, mouseY, leftCenter);
+        const right = getEyeOffset(mouseX, mouseY, rightCenter);
+
+        targetLX = left.x;
+        targetLY = left.y;
+        targetRX = right.x;
+        targetRY = right.y;
+    });
+
+    function animateEyes() {
+        const ease = 0.12;
+        currentLX += (targetLX - currentLX) * ease;
+        currentLY += (targetLY - currentLY) * ease;
+        currentRX += (targetRX - currentRX) * ease;
+        currentRY += (targetRY - currentRY) * ease;
+
+        leftPupil.setAttribute('transform', `translate(${currentLX},${currentLY})`);
+        rightPupil.setAttribute('transform', `translate(${currentRX},${currentRY})`);
+
+        requestAnimationFrame(animateEyes);
+    }
+
+    animateEyes();
+};
+
+/* ============================================
    Init
    ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -283,4 +345,5 @@ document.addEventListener('DOMContentLoaded', () => {
     animateCounters();
     animateSkillBars();
     highlightNavOnScroll();
+    initEyes();
 });
