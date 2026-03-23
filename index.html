@@ -41,6 +41,172 @@
             <a href="#projects" class="btn btn--primary">Ver proyectos</a>
             <a href="#contact" class="btn btn--outline">Hablemos</a>
         </div>
+
+        <!-- Animated Eyes -->
+        <div class="hero__eyes" id="heroEyes">
+            <svg id="eyesSvg" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    .eye-line { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+                    .lash { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; }
+                    .pupil { fill: var(--accent); }
+                    .iris-ring { fill: none; stroke: var(--accent); stroke-width: 2; }
+                    .highlight { fill: var(--accent); stroke: none; opacity: 0.3; }
+
+                    .wink-curve-top {
+                        animation: curveTop 3s ease-in-out infinite;
+                    }
+                    .wink-curve-bot {
+                        animation: curveBot 3s ease-in-out infinite;
+                    }
+                    .wink-pupil {
+                        animation: pupilFade 3s ease-in-out infinite;
+                    }
+                    .blink-curve-top {
+                        animation: leftCurveTop 3s ease-in-out infinite;
+                    }
+                    .blink-curve-bot {
+                        animation: leftCurveBot 3s ease-in-out infinite;
+                    }
+                    .blink-pupil {
+                        animation: pupilFade 3s ease-in-out infinite;
+                    }
+
+                    @keyframes curveTop {
+                        0%,70%,100% { d: path("M368 150 Q390 110 420 100 Q450 92 480 100 Q510 110 532 150"); }
+                        80%,88%     { d: path("M368 150 Q390 148 420 147 Q450 146 480 147 Q510 148 532 150"); }
+                    }
+                    @keyframes curveBot {
+                        0%,70%,100% { d: path("M368 150 Q390 190 420 198 Q450 204 480 198 Q510 190 532 150"); }
+                        80%,88%     { d: path("M368 150 Q390 152 420 153 Q450 154 480 153 Q510 152 532 150"); }
+                    }
+                    @keyframes leftCurveTop {
+                        0%,70%,100% { d: path("M148 150 Q170 110 200 100 Q230 92 260 100 Q290 110 312 150"); }
+                        80%,88%     { d: path("M148 150 Q170 148 200 147 Q230 146 260 147 Q290 148 312 150"); }
+                    }
+                    @keyframes leftCurveBot {
+                        0%,70%,100% { d: path("M148 150 Q170 190 200 198 Q230 204 260 198 Q290 190 312 150"); }
+                        80%,88%     { d: path("M148 150 Q170 152 200 153 Q230 154 260 153 Q290 152 312 150"); }
+                    }
+                    @keyframes pupilFade {
+                        0%,70%,100% { opacity: 1; }
+                        78%,90%     { opacity: 0; }
+                    }
+                </style>
+
+                <!-- OJO IZQUIERDO (parpadeo) -->
+                <g>
+                    <line class="lash" x1="172" y1="115" x2="162" y2="88">
+                        <animate attributeName="y1" values="115;115;148;148;115" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="88;88;145;145;88" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="162;162;154;154;162" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="188" y1="106" x2="182" y2="74">
+                        <animate attributeName="y1" values="106;106;148;148;106" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="74;74;143;143;74" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="182;182;176;176;182" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="205" y1="99" x2="202" y2="65">
+                        <animate attributeName="y1" values="99;99;148;148;99" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="65;65;142;142;65" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="202;202;198;198;202" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="222" y1="95" x2="222" y2="60">
+                        <animate attributeName="y1" values="95;95;147;147;95" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="60;60;141;141;60" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="240" y1="93" x2="243" y2="58">
+                        <animate attributeName="y1" values="93;93;147;147;93" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="58;58;141;141;58" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="257" y1="95" x2="263" y2="62">
+                        <animate attributeName="y1" values="95;95;148;148;95" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="62;62;142;142;62" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="263;263;268;268;263" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="272" y1="100" x2="282" y2="70">
+                        <animate attributeName="y1" values="100;100;148;148;100" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="70;70;143;143;70" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="282;282;288;288;282" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="286" y1="108" x2="300" y2="82">
+                        <animate attributeName="y1" values="108;108;148;148;108" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="82;82;144;144;82" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="300;300;306;306;300" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="297" y1="118" x2="314" y2="98">
+                        <animate attributeName="y1" values="118;118;149;149;118" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="98;98;145;145;98" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="314;314;320;320;314" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+
+                    <path class="eye-line blink-curve-top" d="M148 150 Q170 110 200 100 Q230 92 260 100 Q290 110 312 150"/>
+                    <path class="eye-line blink-curve-bot" d="M148 150 Q170 190 200 198 Q230 204 260 198 Q290 190 312 150"/>
+
+                    <g id="leftPupilGroup" class="blink-pupil" transform="translate(230,150)">
+                        <circle class="iris-ring" cx="0" cy="0" r="20"/>
+                        <circle class="pupil" cx="0" cy="0" r="10"/>
+                        <ellipse class="highlight" cx="-8" cy="-8" rx="5" ry="4"/>
+                    </g>
+                </g>
+
+                <!-- OJO DERECHO (guiño) -->
+                <g>
+                    <line class="lash" x1="392" y1="115" x2="382" y2="88">
+                        <animate attributeName="y1" values="115;115;148;148;115" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="88;88;145;145;88" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="382;382;374;374;382" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="408" y1="106" x2="402" y2="74">
+                        <animate attributeName="y1" values="106;106;148;148;106" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="74;74;143;143;74" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="402;402;396;396;402" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="425" y1="99" x2="422" y2="65">
+                        <animate attributeName="y1" values="99;99;148;148;99" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="65;65;142;142;65" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="422;422;418;418;422" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="442" y1="95" x2="442" y2="60">
+                        <animate attributeName="y1" values="95;95;147;147;95" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="60;60;141;141;60" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="460" y1="93" x2="463" y2="58">
+                        <animate attributeName="y1" values="93;93;147;147;93" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="58;58;141;141;58" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="477" y1="95" x2="483" y2="62">
+                        <animate attributeName="y1" values="95;95;148;148;95" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="62;62;142;142;62" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="483;483;488;488;483" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="492" y1="100" x2="502" y2="70">
+                        <animate attributeName="y1" values="100;100;148;148;100" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="70;70;143;143;70" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="502;502;508;508;502" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="506" y1="108" x2="520" y2="82">
+                        <animate attributeName="y1" values="108;108;148;148;108" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="82;82;144;144;82" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="520;520;526;526;520" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+                    <line class="lash" x1="517" y1="118" x2="534" y2="98">
+                        <animate attributeName="y1" values="118;118;149;149;118" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="y2" values="98;98;145;145;98" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                        <animate attributeName="x2" values="534;534;540;540;534" keyTimes="0;0.70;0.80;0.88;1" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+                    </line>
+
+                    <path class="eye-line wink-curve-top" d="M368 150 Q390 110 420 100 Q450 92 480 100 Q510 110 532 150"/>
+                    <path class="eye-line wink-curve-bot" d="M368 150 Q390 190 420 198 Q450 204 480 198 Q510 190 532 150"/>
+
+                    <g id="rightPupilGroup" class="wink-pupil" transform="translate(450,150)">
+                        <circle class="iris-ring" cx="0" cy="0" r="20"/>
+                        <circle class="pupil" cx="0" cy="0" r="10"/>
+                        <ellipse class="highlight" cx="-8" cy="-8" rx="5" ry="4"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
         <div class="hero__scroll-indicator">
             <div class="hero__scroll-line"></div>
         </div>
