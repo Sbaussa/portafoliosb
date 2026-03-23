@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Steven Baussa - Portfolio</title><link rel="stylesheet" href="styles.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="grain-overlay"></div>
+    <nav class="nav" id="nav">
+        <a href="#" class="nav__logo">SB<span class="accent">.</span></a>
+        <div class="nav__links">
+            <a href="#about" class="nav__link" data-index="1">Sobre mí</a>
+            <a href="#skills" class="nav__link" data-index="2">Skills</a>
+            <a href="#projects" class="nav__link" data-index="3">Proyectos</a>
+            <a href="#contact" class="nav__link" data-index="4">Contacto</a>
+        </div>
+        <button class="nav__menu-btn" id="menuBtn" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-menu__link">Sobre mí</a>
+        <a href="#skills" class="mobile-menu__link">Skills</a>
+        <a href="#projects" class="mobile-menu__link">Proyectos</a>
+        <a href="#contact" class="mobile-menu__link">Contacto</a>
+    </div>
+    <header class="hero" id="hero">
+        <div class="hero__badge">
+            <span class="hero__badge-dot"></span>
+            Disponible para proyectos
+        </div>
+        <h1 class="hero__title">
+            <span class="hero__line hero__line--1">Software</span>
+            <span class="hero__line hero__line--2">Developer<span class="accent">.</span></span>
+        </h1>
+        <p class="hero__subtitle">
+            Construyendo soluciones digitales con código limpio,<br>
+            interfaces intuitivas y mucha pasión
+        </p>
+        <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">Ver proyectos</a>
+            <a href="#contact" class="btn btn--outline">Hablemos</a>
+        </div>
+        <div class="hero__scroll-indicator">
+            <div class="hero__scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="section__header">
+            <span class="section__number">1</span>
+            <h2 class="section__title">Sobre mí</h2>
+            <div class="section__line"></div>
+        </div>
+        <div class="about__grid">
+            <div class="about__image-wrapper">
+                <div class="about__image-frame">
+                    <img 
+                        src="img/steven.png" 
+                        alt="Foto de Steven Baussa" 
+                        class="about__image"
+                    >
+                </div>
+                <div class="about__image-decoration"></div>
+            </div>
+            <div class="about__content">
+                <p class="about__text about__text--highlight">
+                    Soy Steven Baussa, desarrollador de software apasionado por crear 
+                    aplicaciones que resuelvan problemas reales.
+                </p>
+                <p class="about__text">
+                    Actualmente estudiante de ingeniería en sistemas, combinando 
+                    la teoría académica con la práctica real del desarrollo. Me especializo 
+                    en Html, css, js, Python, SQLite / SQL y desarrollo de aplicaciones de escritorio orientadas 
+                    a negocios pequeños y medianos. Mi enfoque es construir software que no solo funcione,
+                     sino que también sea fácil de usar y mantener
+                </p>
+                <p class="about__text">
+                    Cuando no estoy programando, me encuentras arreglando todo tipo de hardware especializado en laptos, PCs y consolas, me gusta entender como 
+                    funcionan los cirucitos y son programables, si algo no se, lo aprendo.
+                </p>
+                <div class="about__stats">
+                    <div class="about__stat">
+                        <span class="about__stat-number" data-count="10">0</span><span class="accent">+</span>
+                        <span class="about__stat-label">Proyectos</span>
+                    </div>
+                    <div class="about__stat">
+                        <span class="about__stat-number" data-count="5">0</span><span class="accent">+</span>
+                        <span class="about__stat-label">Tecnologías</span>
+                    </div>
+                    <div class="about__stat">
+                        <span class="about__stat-number" data-count="2">0</span><span class="accent">+</span>
+                        <span class="about__stat-label">Años codificando</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="section__header">
+            <span class="section__number">2</span>
+            <h2 class="section__title">Skills</h2>
+            <div class="section__line"></div>
+        </div>
+        <div class="skills__grid">
+            <div class="skill-card" data-skill="python">
+                <div class="skill-card__icon">🐍</div>
+                <h3 class="skill-card__title">Python</h3>
+                <p class="skill-card__desc">Desarrollo de aplicaciones, scripts de automatización y lógica de negocio.</p>
+                <div class="skill-card__level">
+                    <div class="skill-card__bar" data-width="90"></div>
+                </div>
+            </div>
+            <div class="skill-card" data-skill="pyqt">
+                <div class="skill-card__icon">🖥️</div>
+                <h3 class="skill-card__title">PyQt6</h3>
+                <p class="skill-card__desc">Interfaces de escritorio modernas con widgets personalizados y temas.</p>
+                <div class="skill-card__level">
+                    <div class="skill-card__bar" data-width="85"></div>
+                </div>
+            </div>
+            <div class="skill-card" data-skill="sql">
+                <div class="skill-card__icon">🗄️</div>
+                <h3 class="skill-card__title">SQLite / SQL</h3>
+                <p class="skill-card__desc">Diseño de bases de datos, consultas complejas y optimización.</p>
+                <div class="skill-card__level">
+                    <div class="skill-card__bar" data-width="80"></div>
+                </div>
+            </div>
+            <div class="skill-card" data-skill="git">
+                <div class="skill-card__icon">📦</div>
+                <h3 class="skill-card__title">Git & GitHub</h3>
+                <p class="skill-card__desc">Control de versiones, ramas, pull requests y trabajo colaborativo.</p>
+                <div class="skill-card__level">
+                    <div class="skill-card__bar" data-width="75"></div>
+                </div>
+            </div>
+            <div class="skill-card" data-skill="html">
+                <div class="skill-card__icon">🌐</div>
+                <h3 class="skill-card__title">HTML / CSS / JS</h3>
+                <p class="skill-card__desc">Desarrollo web frontend, layouts responsivos y animaciones.</p>
+                <div class="skill-card__level">
+                    <div class="skill-card__bar" data-width="70"></div>
+                </div>
+            </div>
+            <div class="skill-card" data-skill="tools">
+                <div class="skill-card__icon">⚙️</div>
+                <h3 class="skill-card__title">Herramientas</h3>
+                <p class="skill-card__desc">PyInstaller, VS Code, terminal, ESC/POS, hardware POS.</p>
+                <div class="skill-card__level">
+                    <div class="skill-card__bar" data-width="75"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="section__header">
+            <span class="section__number">3</span>
+            <h2 class="section__title">Proyectos</h2>
+            <div class="section__line"></div>
+        </div>
+        <div class="projects__grid">
+            <!-- Project 1 -->
+            <article class="project-card project-card--featured">
+                <div class="project-card__number">1</div>
+                <div class="project-card__content">
+                    <div class="project-card__tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">PyQt6</span>
+                        <span class="tag">SQLite</span>
+                    </div>
+                    <h3 class="project-card__title">POS Baussa</h3>
+                    <p class="project-card__desc">
+                        Sistema punto de venta completo para negocios colombianos. Incluye 
+                        gestión de inventario, ventas, clientes, proveedores, impresión térmica, 
+                        sistema de puntos de fidelidad y más.
+                    </p>
+                    <div class="project-card__features">
+                        <span>📊 Dashboard de ventas</span>
+                        <span>🧾 Impresión térmica</span>
+                        <span>📱 Códigos QR</span>
+                        <span>💰 Sistema de puntos</span>
+                    </div>
+                    <div class="project-card__links">
+                        <a href="https://github.com/sbaussa" target="_blank" class="project-card__link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://sbaussa.github.io/facturas-baussa/pagina/inicio/inicio.html" class="project-card__link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card__visual">
+                    <img 
+                        src="img/pos-baussa.png" 
+                        alt="POS Baussa - Sistema punto de venta" 
+                        class="project-card__img"
+                        onclick="openLightbox(this.src)"
+                    >
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card project-card--featured">
+                <div class="project-card__number">2</div>
+                <div class="project-card__content">
+                    <div class="project-card__tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">PyQt6</span>
+                        <span class="tag">SQLite</span>
+                    </div>
+                    <h3 class="project-card__title">BARBER v2.0</h3>
+                    <p class="project-card__desc">
+                        Aplicación de gestión para barberías con agenda de citas, 
+                        manejo de caja, dashboard con estadísticas en tiempo real 
+                        y reportes en Excel/PDF.
+                    </p>
+                    <div class="project-card__links">
+                        <a href="https://github.com/sbaussa" target="_blank" class="project-card__link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card__visual">
+                    <img 
+                        src="img/barber-v2.png" 
+                        alt="BARBER v2.0 - Sistema de gestión para barberías" 
+                        class="project-card__img"
+                        onclick="openLightbox(this.src)"
+                    >
+                </div>
+            </article>
+
+            <!-- Project 3 placeholder -->
+            <article class="project-card">
+                <div class="project-card__number">03</div>
+                <div class="project-card__content">
+                    <div class="project-card__tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Estructuras de datos</span>
+                    </div>
+                    <h3 class="project-card__title">Proyectos Académicos</h3>
+                    <p class="project-card__desc">
+                        Colección de proyectos universitarios incluyendo listas enlazadas, 
+                        simulaciones con PyQt6, y scripts de automatización.
+                    </p>
+                    <div class="project-card__links">
+                        <a href="https://github.com/sbaussa" target="_blank" class="project-card__link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="section__header">
+            <span class="section__number">4</span>
+            <h2 class="section__title">Contacto</h2>
+            <div class="section__line"></div>
+        </div>
+        <div class="contact__wrapper">
+            <div class="contact__info">
+                <h3 class="contact__heading">
+                    ¿Tienes un proyecto<br>en mente<span class="accent">?</span>
+                </h3>
+                <p class="contact__text">
+                    Estoy abierto a oportunidades de freelance, colaboraciones 
+                    y proyectos interesantes. ¡No dudes en contactarme!
+                </p>
+                <div class="contact__links">
+                    <a href="mailto:stevenbaussamz@gmail.com" class="contact__link">
+                        <span class="contact__link-icon">✉️</span>
+                        stevenbaussamz@gmail.com
+                    </a>
+                    <a href="https://github.com/sbaussa" target="_blank" class="contact__link">
+                        <span class="contact__link-icon">🔗</span>
+                        github.com/sbaussa
+                    </a>
+                    <a href="https://instagram.com/stvn_bs" target="_blank" class="contact__link">
+                        <span class="contact__link-icon">📷</span>
+                        Instagram/ Stvn_bsa
+                    </a>
+                </div>
+            </div>
+            <form class="contact__form" id="contactForm">
+                <div class="form__group">
+                    <input type="text" id="name" class="form__input" placeholder=" " required>
+                    <label for="name" class="form__label">Nombre</label>
+                </div>
+                <div class="form__group">
+                    <input type="email" id="email" class="form__input" placeholder=" " required>
+                    <label for="email" class="form__label">Email</label>
+                </div>
+                <div class="form__group">
+                    <textarea id="message" class="form__input form__textarea" placeholder=" " rows="5" required></textarea>
+                    <label for="message" class="form__label">Mensaje</label>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full">
+                    Enviar mensaje
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <span class="footer__logo">SB<span class="accent">.</span></span>
+            <span class="footer__copy">© 2026 Steven Baussa.</span>
+            <div class="footer__socials">
+                <a href="https://github.com/sbaussa" target="_blank" aria-label="GitHub">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="https://instagram.com/stvn_bsa" target="_blank" aria-label="Instagram">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox__backdrop" onclick="closeLightbox()"></div>
+        <button class="lightbox__close" onclick="closeLightbox()" aria-label="Cerrar">&times;</button>
+        <img class="lightbox__img" id="lightboxImg" src="" alt="Vista ampliada">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
