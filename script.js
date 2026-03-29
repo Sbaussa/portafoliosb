@@ -187,7 +187,7 @@ function initContactForm() {
 
         // Armar mensaje de WhatsApp
         const waMessage =
-            `🌐 *Nuevo mensaje desde el Portfolio*\n\n` +
+            `🌐 *Portfolio Steven Buassa*\n\n` +
             `👤 *Nombre:* ${nombre}\n` +
             `📧 *Email:* ${email}\n\n` +
             `💬 *Mensaje:*\n${mensaje}`;
