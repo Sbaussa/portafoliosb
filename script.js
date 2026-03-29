@@ -12,18 +12,13 @@ document.addEventListener('mousemove', (e) => {
    Navigation Scroll Effect
    ============================================ */
 const nav = document.getElementById('nav');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-
-    if (currentScroll > 50) {
+    if (window.scrollY > 50) {
         nav.classList.add('nav--scrolled');
     } else {
         nav.classList.remove('nav--scrolled');
     }
-
-    lastScroll = currentScroll;
 });
 
 /* ============================================
@@ -38,7 +33,6 @@ menuBtn.addEventListener('click', () => {
     document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
 });
 
-// Close mobile menu on link click
 document.querySelectorAll('.mobile-menu__link').forEach(link => {
     link.addEventListener('click', () => {
         menuBtn.classList.remove('active');
@@ -54,9 +48,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
 });
 
@@ -70,18 +62,14 @@ const revealElements = () => {
     );
 
     elements.forEach(el => {
-        if (!el.classList.contains('reveal')) {
-            el.classList.add('reveal');
-        }
+        if (!el.classList.contains('reveal')) el.classList.add('reveal');
     });
 
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
+                    setTimeout(() => { entry.target.classList.add('visible'); }, index * 100);
                     observer.unobserve(entry.target);
                 }
             });
@@ -109,10 +97,8 @@ const animateCounters = () => {
                     const updateCounter = (currentTime) => {
                         const elapsed = currentTime - start;
                         const progress = Math.min(elapsed / duration, 1);
-                        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-
+                        const eased = 1 - Math.pow(1 - progress, 3);
                         entry.target.textContent = Math.floor(eased * target);
-
                         if (progress < 1) {
                             requestAnimationFrame(updateCounter);
                         } else {
@@ -142,9 +128,7 @@ const animateSkillBars = () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const width = entry.target.dataset.width;
-                    setTimeout(() => {
-                        entry.target.style.width = width + '%';
-                    }, 300);
+                    setTimeout(() => { entry.target.style.width = width + '%'; }, 300);
                     barObserver.unobserve(entry.target);
                 }
             });
@@ -168,9 +152,7 @@ const highlightNavOnScroll = () => {
                 if (entry.isIntersecting) {
                     const id = entry.target.id;
                     navLinks.forEach(link => {
-                        link.style.color = link.getAttribute('href') === `#${id}`
-                            ? 'var(--text-primary)'
-                            : '';
+                        link.style.color = link.getAttribute('href') === `#${id}` ? 'var(--text-primary)' : '';
                     });
                 }
             });
@@ -182,27 +164,49 @@ const highlightNavOnScroll = () => {
 };
 
 /* ============================================
-   Contact Form Handler
+   Contact Form — WhatsApp directo
    ============================================ */
-const contactForm = document.getElementById('contactForm');
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    const WA_NUMBER = '573009626009';
 
-    const btn = contactForm.querySelector('.btn');
-    const originalText = btn.innerHTML;
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    btn.innerHTML = '¡Mensaje enviado! ✓';
-    btn.style.background = '#22c55e';
-    btn.style.pointerEvents = 'none';
+        const nombre = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensaje = document.getElementById('message').value.trim();
 
-    setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.style.background = '';
-        btn.style.pointerEvents = '';
-        contactForm.reset();
-    }, 3000);
-});
+        // Validación simple
+        if (!nombre || !email || !mensaje) {
+            alert('Por favor llena todos los campos');
+            return;
+        }
+
+        // Armar mensaje de WhatsApp
+        const waMessage =
+            `🌐 *Nuevo mensaje desde el Portfolio*\n\n` +
+            `👤 *Nombre:* ${nombre}\n` +
+            `📧 *Email:* ${email}\n\n` +
+            `💬 *Mensaje:*\n${mensaje}`;
+
+        const waURL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+
+        // Cambiar botón y redirigir
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) {
+            btn.innerHTML = 'Abriendo WhatsApp...';
+            btn.style.background = '#25d366';
+            btn.style.color = '#fff';
+        }
+
+        setTimeout(() => {
+            window.location.href = waURL;
+        }, 400);
+    });
+}
 
 /* ============================================
    Parallax on Hero (subtle)
@@ -228,10 +232,7 @@ if (window.matchMedia('(pointer: fine)').matches) {
             const y = e.clientY - rect.top - rect.height / 2;
             btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
         });
-
-        btn.addEventListener('mouseleave', () => {
-            btn.style.transform = '';
-        });
+        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
     });
 }
 
@@ -246,10 +247,7 @@ if (window.matchMedia('(pointer: fine)').matches) {
             const y = (e.clientY - rect.top) / rect.height - 0.5;
             card.style.transform = `perspective(800px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg) translateY(-3px)`;
         });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
     });
 }
 
@@ -259,6 +257,7 @@ if (window.matchMedia('(pointer: fine)').matches) {
 function openLightbox(src) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
+    if (!lightbox || !lightboxImg) return;
     lightboxImg.src = src;
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -266,11 +265,11 @@ function openLightbox(src) {
 
 function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
 }
 
-// Close lightbox with Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
 });
@@ -315,10 +314,8 @@ const initEyes = () => {
         const left = getEyeOffset(mouseX, mouseY, leftCenter);
         const right = getEyeOffset(mouseX, mouseY, rightCenter);
 
-        targetLX = left.x;
-        targetLY = left.y;
-        targetRX = right.x;
-        targetRY = right.y;
+        targetLX = left.x; targetLY = left.y;
+        targetRX = right.x; targetRY = right.y;
     });
 
     function animateEyes() {
@@ -345,5 +342,6 @@ document.addEventListener('DOMContentLoaded', () => {
     animateCounters();
     animateSkillBars();
     highlightNavOnScroll();
+    initContactForm();
     initEyes();
 });
